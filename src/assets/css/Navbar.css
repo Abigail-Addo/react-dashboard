@@ -1,0 +1,28 @@
+header {
+    background-color: #BEE3FE;
+    width: 100%;
+    height: 10%;
+    /* border: 2px solid black; */
+}
+
+header div.image {
+    width: 20%;
+    height: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div.image img {
+    width: 90%;
+    height: 65%;
+    display: flex;
+    /* margin: auto; */
+}
+
+header div.image i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-left: 0.5rem;
+}
