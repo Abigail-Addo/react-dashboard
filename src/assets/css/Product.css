@@ -10,7 +10,7 @@ main.container {
 main.container div.card-form {
     width: 50%;
     height: 80%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
@@ -21,7 +21,7 @@ main.container div.card-form form {
     padding: 2rem 2rem 0;
 }
 
-form div.form-controls {
+form.form div.form-controls {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -29,14 +29,14 @@ form div.form-controls {
     position: relative;
 }
 
-form div.form-controls label {
+form.form div.form-controls label {
     padding-bottom: 0.35rem;
     padding-left: 0.4rem;
     font-size: 1rem;
     font-weight: bold;
 }
 
-form div.form-controls input {
+form.form div.form-controls input {
     width: 100%;
     border: 0;
     border: 2px solid #9e9e9e;
@@ -47,15 +47,15 @@ form div.form-controls input {
     font-size: 1rem;
 }
 
-form div.form-controls input#file {
+form.form div.form-controls input#file {
     background-color: #fff;
     border: 0;
     padding: 0;
     border-radius: 0;
 }
 
-form div.form-controls input:hover,
-form div.form-controls input:focus {
+form.form div.form-controls input:hover,
+form.form div.form-controls input:focus {
     border: 2px solid black;
 }
 
@@ -68,7 +68,7 @@ button.submit {
     border: 0;
     font-weight: bold;
     border-radius: 25px;
-    color: #fff;
+    color: #000;
 }
 
 button.submit:hover,

@@ -3,16 +3,16 @@ import Navbar from '../Components/Navbar';
 import { useState } from 'react';
 import '../assets/css/Product.css';
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Products = () => {
   const [showText, setShowText] = useState(true)
 
-  const { register, handleSubmit, formState: { errors }, getValues } = useForm();
+  const { register, handleSubmit, formState: { errors }, getValues, reset } = useForm();
 
   const [productImage, setProductImage] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
 
   const toggleText = () => {
     setShowText(!showText);
@@ -34,8 +34,8 @@ const Products = () => {
           Accept: "application/octet-stream",
         },
         body: formData
-
       })
+
       if (server.status == 200) {
         const response = await server.json()
         const { name, price, description, stock } = getValues();
@@ -56,12 +56,10 @@ const Products = () => {
 
         const data = await result.json();
         if (data.id > 0) {
-          setSuccessMessage("Product added successfully")
+          toast.success("Product added successfully");
+          reset();
         } else {
-          setErrorMessage("Failed to add product")
-          setTimeout(() => {
-            setErrorMessage(errorMessage)
-          }, 3000);
+          toast.error("Failed to add product")
         }
       }
     } catch (error) {
@@ -82,24 +80,16 @@ const Products = () => {
         </Sidebar>
         <main className="container">
           <div className="card-form">
-            <form onSubmit={handleSubmit(addSubmit)} encType="multipart/form-data">
-              {errorMessage && (
-                <div className="errorMessage">
-                  <p>{errorMessage}</p>
-                </div>
-              )
-              }
-              {successMessage && (
-                <div className="successMessage">
-                  <p>{successMessage}</p>
-                </div>
-              )
-              }
+            <form onSubmit={handleSubmit(addSubmit)} encType="multipart/form-data" className='form'>
+      
+              <ToastContainer />
+
               <div className="form-controls">
                 <label htmlFor="Pname">Name</label>
                 <input type="text" name="name" placeholder="Product name" id="name" {...register("name")} required />
                 {errors.name && <p>{errors.name.message}</p>}
               </div>
+            
               <div className="form-controls">
                 <label htmlFor="description">Description</label>
                 <input type="text" name="description" placeholder="description" id="description" {...register("description")} required />
@@ -116,7 +106,7 @@ const Products = () => {
                 {errors.stock && <p>{errors.stock.message}</p>}
               </div>
               <div className="form-controls">
-                <input type="file" name="file" id="file" onChange={handleImageChange} required/>
+                <input type="file" name="file" id="file" onChange={handleImageChange} required />
               </div>
 
 
