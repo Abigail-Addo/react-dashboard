@@ -37,7 +37,7 @@ const Navbar = ({ toggleText }) => {
                         <ul className='user-details'>
                             <li>
                                 <img
-                                    src={admin.profile_photo}
+                                    src={admin.picture}
                                     alt="logo"
                                 />
                                 <p>
