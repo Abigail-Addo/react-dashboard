@@ -18,9 +18,9 @@ const Navbar = ({ toggleText }) => {
         } else {
             setAuth(false);
         }
-    }
-        , [setAdmin, setAuth]);
+    }  , [setAdmin, setAuth]);
 
+    
     return (
         <>
             <header>
