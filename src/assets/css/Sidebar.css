@@ -1,6 +1,5 @@
 aside {
     background-color: #BEE3FE;
-    border-right: 1px solid gray;
     width: 100%;
     height: 100%;
 }
@@ -46,22 +45,22 @@ ul.sidebar li.sidebar a i {
     padding-right: 1rem;
 }
 
-ul.sidebar li.sidebar a:hover {
+ul.sidebar li.sidebar a:hover,
+ul.sidebar li.sidebar a.active {
     padding-left: 1.5rem;
 }
 
 .active {
-    background-color: #FFBFF9;
+    background-color: #E6F7FF;
     padding: 2rem 0 2rem 1rem;
 
 }
 
 .active::before {
     content: "";
-    border-left: 6px solid green;
+    border-left: 6px solid #FFBFF9;
     position: absolute;
     top: 0;
     left: 1%;
     height: 100%;
 }
-

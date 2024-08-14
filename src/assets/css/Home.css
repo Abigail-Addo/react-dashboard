@@ -1,7 +1,6 @@
 main.wrapper {
-    background-color: #E6F7FF;
+    /* background-color: #E6F7FF; */
     padding: 1rem;
-    border-top: 1px solid #808080;
 }
 
 main.wrapper div.welcome div button {
@@ -35,7 +34,7 @@ main.wrapper div.card-container {
 }
 
 main.wrapper div.card-container div.card {
-    background-color: #fff;
+    background-color: #E6F7FF;
     padding: 1rem;
     display: flex;
     flex-direction: column;

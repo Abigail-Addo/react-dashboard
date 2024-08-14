@@ -20,5 +20,5 @@ div.container {
 }
 
 .container.hide {
-  grid-template-columns: 3% 1fr; 
+  grid-template-columns: 3% 1fr;
 }

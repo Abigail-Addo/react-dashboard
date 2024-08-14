@@ -18,7 +18,7 @@ const Login = () => {
     const loginSubmit = async () => {
 
         try {
-            const result = await fetch(`http://localhost:7272/api/login`, {
+            const result = await fetch(`https://shopping-backend-mhxl.onrender.com/api/login`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {

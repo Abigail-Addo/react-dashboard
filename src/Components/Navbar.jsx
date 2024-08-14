@@ -1,6 +1,6 @@
 import Logo from '../assets/images/logo.png';
 import '../assets/css/Navbar.css'
-import { useAuth } from '../Context/AuthContext';
+import { useAuth } from '../ContextAPI/AuthContext';
 import { Link } from 'react-router-dom';
 import { useEffect } from "react";
 

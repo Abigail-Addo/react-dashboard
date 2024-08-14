@@ -2,7 +2,7 @@
 import Routes from './routes'
 import './assets/css/App.css'
 
-import { AuthProvider } from './Context/AuthContext';
+import { AuthProvider } from './ContextAPI/AuthContext';
 
 
 function App() {
