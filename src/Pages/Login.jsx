@@ -17,7 +17,7 @@ const Login = () => {
   const password = watch("password");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // Track password visibility
+  const [showPassword, setShowPassword] = useState(true);
 
   const { login, setAuth } = useAuth();
 
