@@ -17,6 +17,7 @@ const Login = () => {
   const password = watch("password");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // Track password visibility
 
   const { login, setAuth } = useAuth();
 
@@ -57,11 +58,15 @@ const Login = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       <div className="con">
         <main className="wrapper-container">
-          <h2>Welcome </h2>
+          <h2>Welcome</h2>
           {errorMessage && (
             <div className="errorMessage">
               <p>{errorMessage}</p>
@@ -92,7 +97,7 @@ const Login = () => {
             <div className="form-controls">
               <label htmlFor="password">Password</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 {...register("password", {
@@ -103,7 +108,13 @@ const Login = () => {
                 required
               />
               {errors.password && <p>{errors.password.message}</p>}
-              <i className="bi bi-eye-slash" id="togglePassword"></i>
+
+              {/* Toggle Icons */}
+              <i
+                className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}
+                id="togglePassword"
+                onClick={togglePasswordVisibility}
+              ></i>
             </div>
 
             <button type="submit" className="submit">
